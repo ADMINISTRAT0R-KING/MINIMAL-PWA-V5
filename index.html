@@ -20,7 +20,7 @@
   <body>
   <!-- MAIN BODY -->
     
-    <h1>PWA-V4</h1>
+    <h1>PWA-V5</h1>
     
   </body>
   <script type="text/javascript">
@@ -28,7 +28,7 @@
     
     document.addEventListener("DOMContentLoaded",()=>{
       if(navigator.serviceWorker != null){
-        navigator.serviceWorker.register("/sw.js").then((reg)=>{
+        navigator.serviceWorker.register("sw.js").then((reg)=>{
           reg.onupdatefound=()=>{
             reg.update().then(()=>{
              confirm("\nSERVICE-WORKER UPDATED SUCCESSFULLY ◉‿◉")
