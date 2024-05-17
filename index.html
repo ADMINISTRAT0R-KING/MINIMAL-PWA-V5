@@ -1,0 +1,46 @@
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+  <!-- BROWSER CONFIG -->
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=off,maximum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="mobile-web-app-capable" content="yes"/>
+    <meta name="HandheldFriendly" content="true"/>
+    
+  <!-- BROWSER THEME & ICON-->
+    <meta name="theme-color" content="#000">
+    <link rel="shortcut icon" type="image/x-icon" href="e.png">
+    
+  <!-- FILE CONFIG -->
+    <link rel="manifest" href="manifest.json">
+    
+    
+  </head>
+  <body>
+  <!-- MAIN BODY -->
+    
+    <h1>PWA-V4</h1>
+    
+  </body>
+  <script type="text/javascript">
+    fetch('./e.png');
+    
+    document.addEventListener("DOMContentLoaded",()=>{
+      if(navigator.serviceWorker != null){
+        navigator.serviceWorker.register("/sw.js").then((reg)=>{
+          reg.onupdatefound=()=>{
+            reg.update().then(()=>{
+             confirm("\nSERVICE-WORKER UPDATED SUCCESSFULLY ◉‿◉")
+            });
+          }
+        }).catch((err)=>{
+          alert("\nSERVICE-WORKER UPDATE ERROR:- "+err)
+        });
+      }else{
+        confirm("\nBROWSR DO NOT SUPPORT SERVICE-WORKER!");
+      }
+    })
+    
+  </script>
+  </html>
